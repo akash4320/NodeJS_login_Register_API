@@ -16,7 +16,7 @@ exports.registerUser = (req, res) => {
 // login user
 exports.loginUser = (req, res) => {
     userService.loginUser(req.body).then((response) => {
-        res.json({ data: response, status: "ok" });
+        res.json({ token: response, status: "ok" });
     }).catch((err) => {
         res.status(500).json({ status:'error', error: err });
     })
